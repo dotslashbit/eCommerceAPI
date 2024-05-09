@@ -40,7 +40,10 @@ export class ProductsController {
   // PUT an updated product
   @Patch(':id')
   @UseGuards(JwtAuthGuard)
-  async updateProduct(id: number, product: Product): Promise<Product> {
+  async updateProduct(
+    @Param('id') id: number,
+    @Body() product: Product,
+  ): Promise<Product> {
     return this.productsService.updateProduct(id, product);
   }
 
