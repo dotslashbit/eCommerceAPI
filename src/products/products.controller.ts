@@ -26,7 +26,7 @@ export class ProductsController {
   // GET a product by ID
   @Get(':id')
   @UseGuards(JwtAuthGuard)
-  async getProductById(id: number): Promise<Product> {
+  async getProductById(@Param('id') id: number): Promise<Product> {
     return this.productsService.getProductById(id);
   }
 
