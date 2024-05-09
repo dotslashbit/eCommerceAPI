@@ -1,6 +1,7 @@
 import { User } from 'src/users/user.entity';
-import { Column, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
+@Entity()
 export class Product {
   @PrimaryGeneratedColumn()
   productId: number;
